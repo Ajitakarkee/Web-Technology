@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Extract Numbers from String</title>
+</head>
+<body>
+  <h2>Extract Numbers from Sentence</h2>
+
+  <input type="text" id="inputText" placeholder="Enter a sentence with numbers" size="50" />
+  <button onclick="extractNumbers()">Extract Numbers</button>
+  <p id="result"></p>
+
+  <script>
+    function extractNumbers() {
+      const text = document.getElementById("inputText").value;
+
+      // Regex to match sequences of digits (one or more digits)
+      const regex = /\d+/g;
+
+      // Using match() to get all matches as an array, or empty array if none found
+      const numbers = text.match(regex) || [];
+
+      const resultElement = document.getElementById("result");
+      if (numbers.length > 0) {
+        resultElement.innerText = `Numbers found: ${numbers.join(", ")}`;
+        resultElement.style.color = "green";
+      } else {
+        resultElement.innerText = "No numbers found in the input.";
+        resultElement.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

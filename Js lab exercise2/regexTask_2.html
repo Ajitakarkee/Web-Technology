@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Letter-Only Input Validation</title>
+</head>
+<body>
+  <h2>Only Letters Validator</h2>
+
+  <input type="text" id="letterInput" placeholder="Enter only letters (a-zA-Z)">
+  <button onclick="validateLetters()">Validate</button>
+  <p id="result"></p>
+
+  <script>
+    function validateLetters() {
+      const input = document.getElementById("letterInput").value;
+
+      // RegEx: match only letters (upper and lower case)
+      const regex = /^[A-Za-z]+$/;
+
+      const resultElement = document.getElementById("result");
+
+      if (regex.test(input)) {
+        resultElement.innerText = "✅ Valid: Only letters!";
+        resultElement.style.color = "green";
+      } else {
+        resultElement.innerText = "❌ Invalid: Only letters are allowed.";
+        resultElement.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

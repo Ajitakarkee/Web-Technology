@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phone Number Validator</title>
+</head>
+<body>
+  <h2>10-digit Phone Number Validation</h2>
+
+  <input type="text" id="phoneInput" placeholder="Enter 10-digit phone number" />
+  <button onclick="validatePhone()">Validate</button>
+  <p id="result"></p>
+
+  <script>
+    function validatePhone() {
+      const phone = document.getElementById("phoneInput").value;
+
+      // Regex: Exactly 10 digits from start (^) to end ($)
+      const regex = /^\d{10}$/;
+
+      const resultElement = document.getElementById("result");
+
+      if (regex.test(phone)) {
+        resultElement.innerText = "✅ Valid 10-digit phone number!";
+        resultElement.style.color = "green";
+      } else {
+        resultElement.innerText = "❌ Invalid phone number. Must be exactly 10 digits.";
+        resultElement.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

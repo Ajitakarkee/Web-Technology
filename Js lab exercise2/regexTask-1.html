@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Word Checker</title>
+</head>
+<body>
+  <h2>Check if Sentence Contains "JavaScript"</h2>
+
+  <input type="text" id="sentenceInput" placeholder="Enter a sentence">
+  <button onclick="checkForJavaScript()">Check</button>
+  <p id="result"></p>
+
+  <script>
+    function checkForJavaScript() {
+      const sentence = document.getElementById("sentenceInput").value;
+
+      // RegEx to match "JavaScript" case-insensitively
+      const regex = /javascript/i;
+
+      const resultElement = document.getElementById("result");
+
+      if (regex.test(sentence)) {
+        resultElement.innerText = '✅ The word "JavaScript" is present.';
+        resultElement.style.color = "green";
+      } else {
+        resultElement.innerText = '❌ The word "JavaScript" is NOT present.';
+        resultElement.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

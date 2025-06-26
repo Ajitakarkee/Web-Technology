@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Object Task</title>
+</head>
+<body>
+    <h2>Task 2: Student  Object (new object ())</h2>
+    <p>Check the console for output.</p>
+
+
+    <script>
+    
+       // Step 1: Create a student object using new Object()
+        let student = new Object();
+
+        // Step 2: Add properties to the student object
+        student.name = "Ajita Karki";
+        student.age = 20;
+        student.subjects = [];
+
+        // Step 2.1: Add method to dynamically add subjects
+        student.addSubject = function(subjectName) {
+            this.subjects.push(subjectName);
+        };
+
+        // Step 3: Add at least two subjects using the method
+        student.addSubject("web technology");
+        student.addSubject("Computer Science");
+
+        // Step 4: Log the student's details
+        console.log("Student Details:");
+        console.log("Name:", student.name);
+        console.log("Age:", student.age);
+        console.log("Subjects:", student.subjects.join(", "));
+    </script>
+</body>
+</html>
